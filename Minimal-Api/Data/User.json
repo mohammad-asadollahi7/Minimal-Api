@@ -1,15 +1,1 @@
-[
-  {
-    "Id": 1,
-    "Name": "Mohammad",
-    "Family": "Asadollahi",
-    "Email": "Asadolahi.ma7@gamil.com"
-  },
-
-  {
-    "Id": 2,
-    "Name": "Ali",
-    "Family": "Mohammadi",
-    "Email": "Mohammadi@gmail.com"
-  }
-]
+[{"Id":1,"Name":"Mohammad","Family":"Asadollahi","Email":"Asadolahi.ma7@gamil.com"},{"Id":2,"Name":"Ali","Family":"Mohammadi","Email":"Mohammadi@gmail.com"},{"Id":3,"Name":"Alireza","Family":"Ahmadi","Email":"Ahmadi@gmail.com"},{"Id":4,"Name":"Reza","Family":"Ahmadzadeh","Email":"Ahmadzadeh@gmail.com"}]

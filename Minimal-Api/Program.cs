@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Minimal_Api.Data;
+using Minimal_Api.Model;
 using Minimal_Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,9 +21,17 @@ app.MapGet("/users", async (HttpContext context, [FromServices] ICRUDServices CR
     await context.Response.WriteAsJsonAsync(CRUDServices.GetAll());
 });
 
-app.MapGet("/users/{id}", async (HttpContext context, [FromServices] ICRUDServices CRUDServices, int id) => 
+app.MapGet("/user/{id}", async (HttpContext context, [FromServices] ICRUDServices CRUDServices,
+                                int id) =>
 {
     await context.Response.WriteAsJsonAsync(CRUDServices.GetById(id));
 });
 
+app.MapPost("/adduser", async (HttpContext context, [FromServices] ICRUDServices CRUDServices) =>
+{
+
+    var newUser = await context.Request.ReadFromJsonAsync<User>();
+    CRUDServices.Create(newUser);
+    context.Response.StatusCode = 201;
+});
 app.Run();
