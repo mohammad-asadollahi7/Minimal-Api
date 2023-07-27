@@ -7,8 +7,4 @@
     <RootNamespace>Minimal_Api</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

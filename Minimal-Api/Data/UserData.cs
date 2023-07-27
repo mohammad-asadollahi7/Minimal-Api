@@ -6,7 +6,7 @@ namespace Minimal_Api.Data;
 public class UserData
 {
     private string FilePath;
-    List<User>? users;
+    public List<User>? users;
     public UserData()
     {
         FilePath = GetFilePath();
