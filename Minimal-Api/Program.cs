@@ -34,4 +34,21 @@ app.MapPost("/adduser", async (HttpContext context, [FromServices] ICRUDServices
     CRUDServices.Create(newUser);
     context.Response.StatusCode = 201;
 });
+
+app.MapPut("/updateuser", async (HttpContext context, [FromServices] ICRUDServices CRUDServices) =>
+    {
+        var updatedUser = await context.Request.ReadFromJsonAsync<User>();
+        CRUDServices.Update(updatedUser);
+        context.Response.StatusCode = 200;
+    });
+
+
+app.MapDelete("/deleteuser/{id}", (HttpContext context, [FromServices] ICRUDServices
+                                         CRUDSercives, int id) =>
+{
+    CRUDSercives.Delete(id);
+    context.Response.StatusCode = 200;
+});
 app.Run();
+
+

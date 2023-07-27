@@ -43,6 +43,9 @@ public class CRUDServices : ICRUDServices
     public void Update(User updatedUser)
     {
         var oldUser = _userData.users.FirstOrDefault(u => u.Id == updatedUser.Id);
+        if (oldUser == null)
+            throw new TheUserDoesNotExistException();
+
         var userIndex = _userData.users.IndexOf(oldUser);
         _userData.users[userIndex] = updatedUser;
         _userData.Savechanges();
