@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Minimal_Api.Data;
+using Minimal_Api.ExceptionMiddleware;
 using Minimal_Api.Model;
 using Minimal_Api.Services;
+using Minimal_Api.Services.Exception;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 
-
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapGet("/users", async (HttpContext context, [FromServices] ICRUDServices CRUDServices) =>
 {
