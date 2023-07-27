@@ -24,8 +24,8 @@ public class UserData
     {
         string workingDirectory = Environment.CurrentDirectory;
         string? projectDirectory = Directory.GetParent(workingDirectory)?
-                                    .Parent?.Parent?.FullName;
-        return Path.Combine(projectDirectory, "Data", "User.json");
+                                    .FullName;
+        return Path.Combine(projectDirectory, "Minimal-api", "Data", "User.json");
     }
 
 
