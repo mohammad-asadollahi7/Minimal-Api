@@ -1,5 +1,6 @@
 ﻿using Minimal_Api.Data;
 using Minimal_Api.Model;
+using Minimal_Api.Services.Exception;
 using System.Collections.Generic;
 
 namespace Minimal_Api.Services;
